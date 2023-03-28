@@ -1,4 +1,5 @@
 body{
+    background: radial-gradient( circle,rgba(153, 205, 50, 0.426) , rgba(3, 84, 177, 0.514));
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -56,9 +57,10 @@ container{
 
 }
 .carre{
+    background-color: rgba(240, 248, 255, 0.61);
     width: 200px;
     height: 200px;
-    border: 2px rgb(61, 61, 123) solid;
+    border: 2px rgba(61, 61, 123, 0.692) solid;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
