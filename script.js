@@ -7,6 +7,7 @@ let o="<img src='images/O.png'>";
 
 const win = [
 [0,1,2],
+[0,3,6],
 [0,4,8],
 [0,4,6],
 [1,4,7],
@@ -28,7 +29,7 @@ init();
 function init(){
     tictactoe.forEach(carre=>carre.addEventListener('click',carreClick));
     btnRestart.addEventListener('click',restartGame);
-    statusTxt.textContent=`${player} Your Turn`;
+    statusTxt.textContent=`${player} , start`;
     running=true;
   }
 
@@ -49,7 +50,7 @@ function init(){
   function changePlayer(){
       player=(player=='X') ? "O" :"X";
       currentPlayer=(currentPlayer==x) ? o :x;
-      statusTxt.textContent=`${player} Your Turn`;
+      statusTxt.textContent=`${player} , it's your turn ☝🏽`;
   }
 
   function checkWinner(){
@@ -80,10 +81,10 @@ function init(){
 }
 
 if(isWon){
-    statusTxt.textContent=`${player} Won !`;
+    statusTxt.textContent=`${player} Won 🎉`;
     running=false;
 } else if(!options.includes("")){
-    statusTxt.textContent=`Game Draw !`;
+    statusTxt.textContent=`Game Draw 🥵`;
     running=false;
 } else {
     changePlayer();
@@ -95,7 +96,7 @@ if(isWon){
     player=x;
     player="X";
     running=true;
-    statusTxt.textContent=`${player} Your Turn`;
+    statusTxt.textContent=`${player} , it's your turn ☝🏽`;
   
     tictactoe.forEach(carre=>{
         carre.innerHTML="";
