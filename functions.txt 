@@ -1,0 +1,13 @@
+Nota bene : 
+
+
+
+La fonction checkWinner() : vérifie si l'un des joueurs a gagné ou s'il y a match nul en vérifiant si les options de cases jouées correspondent à l'une des combinaisons gagnantes stockées dans le tableau win.
+
+Pour ce faire, la fonction parcourt chaque combinaison gagnante dans le tableau win en utilisant une boucle "for". Pour chaque combinaison gagnante, elle récupère les valeurs des options des cases correspondantes à cette combinaison en utilisant les index stockés dans le tableau win.
+
+Si l'une des options de cases est vide, la fonction continue à vérifier les autres combinaisons. Si toutes les cases sont remplies et aucune combinaison gagnante n'est trouvée, la fonction affiche un message de match nul.
+
+Si une combinaison gagnante est trouvée, la fonction marque les cases correspondantes en ajoutant la classe CSS win à ces éléments, change le message d'état pour afficher le gagnant, puis déclare que le jeu est terminé en définissant la variable running sur false.
+
+Enfin, si aucun des deux cas précédents n'est rencontré, la fonction appelle la fonction changePlayer() pour changer le joueur en cours.
