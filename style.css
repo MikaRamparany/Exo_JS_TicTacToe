@@ -6,7 +6,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1{
     height: 20%;
@@ -40,13 +40,14 @@ container{
     width: 20%;
     border: 1px blue solid;
 }
-.score0 h1{
+.scoreO h1{
     font-size: 25px;
 }
+
 .tictactoe{
     height: 100%;
     width: 35%;
-    border : 2px green solid;
+    
     display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -57,13 +58,14 @@ container{
 .carre{
     width: 200px;
     height: 200px;
-    background-color: aquamarine;
+    border: 2px rgb(61, 61, 123) solid;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-p{
+p{  color: rgb(174, 26, 26);
     font-size: 60px;
     font-weight:200;
 }
