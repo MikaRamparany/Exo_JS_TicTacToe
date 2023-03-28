@@ -15,6 +15,10 @@ const win = [
 [3,4,5],
 [6,7,8]     ]
 
+let scoreX = 0; // ont été ajouté pour être utilisé dans la fonction checkWinner et mettre à jour les scores
+let scoreO = 0;
+
+
 let options=["","","","","","","","",""];
 let currentPlayer=x;
 let player="X";
@@ -51,7 +55,7 @@ function init(){
   function checkWinner(){
     let isWon=false;
     for(let i=0;i<win.length;i++){
-      const condition=win[i]; //[0,1,2]
+      const condition=win[i]; //[0,1,2]etc.
       const carre1=options[condition[0]]; //x
       const carre2=options[condition[1]]; //''
       const carre3=options[condition[2]]; //''
@@ -60,27 +64,35 @@ function init(){
       }
       if(carre1==carre2 && carre2==carre3){
         isWon=true;
-        stictactoe[condition[0]].classList.add('win');
+        tictactoe[condition[0]].classList.add('win');
         tictactoe[condition[1]].classList.add('win');
         tictactoe[condition[2]].classList.add('win');
-      }
+
+        if (player == 'X') {
+            scoreX++;
+            document.querySelector('#scoreX').textContent = scoreX;
+        } else {
+            scoreO++;
+            document.querySelector('#scoreO').textContent = scoreO;
+        }
+        break; // ajout de break ici pour sortir immédiatement de la boucle, car si il n'y avait pas le break, et que le joueur lié à currentplayer  gagnait sur la win [2,4,6], il aurait eu 2points..
     }
-  
-    if(isWon){
-      statusTxt.textContent=`${player} Won !`;
-      running=false;
-    }else if(!options.includes("")){
-      statusTxt.textContent=`Game Draw !`;
-      running=false;
-    }else{
-      changePlayer();
-    }
-  
-  }
+}
+
+if(isWon){
+    statusTxt.textContent=`${player} Won !`;
+    running=false;
+} else if(!options.includes("")){
+    statusTxt.textContent=`Game Draw !`;
+    running=false;
+} else {
+    changePlayer();
+}
+}
   
   function restartGame(){
     options=["","","","","","","","",""];
-    currentPlayer=x;
+    player=x;
     player="X";
     running=true;
     statusTxt.textContent=`${player} Your Turn`;
